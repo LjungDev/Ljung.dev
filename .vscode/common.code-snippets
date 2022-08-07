@@ -1,0 +1,88 @@
+{
+  "new component": {
+    "scope": "typescriptreact",
+    "prefix": "comp",
+    "description": "Add new component",
+    "body": [
+      "interface $1Props {",
+      "  $0",
+      "}",
+      "",
+      "export default function $1({}: $1Props): JSX.Element {",
+      "  return (<></>);",
+      "}",
+      ""
+    ]
+  },
+
+  "new component stories": {
+    "scope": "typescriptreact",
+    "prefix": "story",
+    "description": "Add ladle story for component",
+    "body": [
+      "import $1 from \".\";",
+      "",
+      "export function Default() {",
+      "  return <$1 />;",
+      "}",
+      ""
+    ]
+  },
+
+  "new component stories with control": {
+    "scope": "typescriptreact",
+    "prefix": "storycontrol",
+    "description": "Add ladle story for component (with controls)",
+    "body": [
+      "import $1 from \".\";",
+      "",
+      "interface ControlProps {",
+      "  name: string;",
+      "  size: string;",
+      "}",
+      "",
+      "export function Default({ name }: ControlProps) {",
+      "  return <$1 name={name} />;",
+      "}",
+      "",
+      "Default.args = {",
+      "  name: \"Hello\",",
+      "  size: \"sm\",",
+      "} as ControlProps;",
+      "",
+      "Default.argTypes = {",
+      "  size: {",
+      "    options: [\"sm\", \"md\", \"lg\"],",
+      "    control: { type: \"select\" },",
+      "  },",
+      "};"
+    ]
+  },
+
+  "new component index": {
+    "scope": "typescriptreact,typescript",
+    "prefix": "indexcomp",
+    "description": "Add new component index",
+    "body": ["export { default } from \"./$1\";", ""]
+  },
+
+  "new component test": {
+    "scope": "typescriptreact",
+    "prefix": "test",
+    "description": "Add new component test",
+    "body": [
+      "import { render } from \"../../../.jest/render\";",
+      "import $1 from \".\";",
+      "",
+      "describe(\"$1\", () => {",
+      "  it(\"renders\", () => {",
+      "    const func = () =>",
+      "      render(<$1$0 />);",
+      "",
+      "    expect(func).not.toThrow();",
+      "  });",
+      "});",
+      ""
+    ]
+  }
+}
