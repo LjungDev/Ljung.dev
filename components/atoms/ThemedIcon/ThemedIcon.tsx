@@ -8,6 +8,7 @@ const iconMap: Record<Icon, IconElementFunc> = {
   github: (className: string) => {
     return (
       <svg
+        aria-label="GitHub Invertocat"
         width="16px"
         height="16px"
         version="1.1"
