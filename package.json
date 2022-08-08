@@ -6,6 +6,7 @@
     "dev": "next dev",
     "wsldev": "next dev -H $(hostname -I)",
     "build": "next build",
+    "static": "next build && next export",
     "start": "next start",
     "wslstart": "next start -H $(hostname -I)",
     "lint": "next lint",
