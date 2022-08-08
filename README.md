@@ -11,6 +11,7 @@ This is the source code for [ljung.dev](https://ljung.dev).
 It uses the following stack:
 
 - [NextJS](https://nextjs.org/) as framework
+- [DatoCMS](https://www.datocms.com/) for content
 - [Tailwind](https://tailwindcss.com/) for styling
 - [Nord](https://www.nordtheme.com/) as theme (with [Baloo 2](https://fonts.google.com/specimen/Baloo+2) / [Open Sans](https://fonts.google.com/specimen/Open+Sans) / [Fira Code](https://fonts.google.com/specimen/Fira+Code) for fonts)
 - [Ladle](https://ladle.dev/) for component stories
@@ -37,3 +38,14 @@ Prefix each command with `yarn`, e.g. `yarn dev`.
 | `lint`               | Check for linting errors.                                                                                                                                                |
 | `ladle`              | View component stories.                                                                                                                                                  |
 | `test`               | Run unit tests.                                                                                                                                                          |
+
+## Environment variables
+
+The following environment variables are needed. For local development add them to your `./.env.local`.
+
+| Variable                 | Value                                                         |
+| ------------------------ | ------------------------------------------------------------- |
+| DATOCMS_ENDPOINT         | Endpoint URL to DatoCMS for content (live).                   |
+| DATOCMS_PREVIEW_ENDPOINT | Endpoint URL to DatoCMS for content (drafts).                 |
+| DATOCMS_API_TOKEN        | API token (read-only) for DatoCMS.                            |
+| PREVIEW_TOKEN            | Random string used as query parameter to toggle preview mode. |
