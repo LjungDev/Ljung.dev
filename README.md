@@ -43,9 +43,10 @@ Prefix each command with `yarn`, e.g. `yarn dev`.
 
 The following environment variables are needed. For local development add them to your `./.env.local`.
 
-| Variable                 | Value                                                         |
-| ------------------------ | ------------------------------------------------------------- |
-| DATOCMS_ENDPOINT         | Endpoint URL to DatoCMS for content (live).                   |
-| DATOCMS_PREVIEW_ENDPOINT | Endpoint URL to DatoCMS for content (drafts).                 |
-| DATOCMS_API_TOKEN        | API token (read-only) for DatoCMS.                            |
-| PREVIEW_TOKEN            | Random string used as query parameter to toggle preview mode. |
+| Variable                 | Value                                                                   |
+| ------------------------ | ----------------------------------------------------------------------- |
+| DATOCMS_ENDPOINT         | Endpoint URL to DatoCMS for content (live).                             |
+| DATOCMS_PREVIEW_ENDPOINT | Endpoint URL to DatoCMS for content (drafts).                           |
+| DATOCMS_API_TOKEN        | API token (read-only) for DatoCMS.                                      |
+| PREVIEW_TOKEN            | Random string used as query parameter to toggle preview mode.           |
+| UNOPTIMIZED_IMAGES       | (optional) Set to disable images optimization (used for `next export`). |
