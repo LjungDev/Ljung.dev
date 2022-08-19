@@ -9,17 +9,9 @@ import TitleHeader from "../components/atoms/TitleHeader";
 import { queryWithCommon } from "../lib/cms";
 import Logo from "../components/atoms/Logo";
 
-import type { Icon } from "../components/atoms/ThemedIcon/ThemedIcon.types";
 import type { CommonProps } from "../lib/cms";
 
-interface IndexPageProps extends CommonProps {
-  isPreview: boolean;
-  allExternalIconLinks: {
-    iconType: Icon;
-    altText: string;
-    link: string;
-  }[];
-}
+type IndexPageProps = CommonProps;
 
 export default function IndexPage({
   isPreview,
@@ -56,7 +48,7 @@ export default function IndexPage({
   );
 }
 
-const SITE_QUERY = gql`
+const PROPS_QUERY = gql`
   {
     allExternalIconLinks {
       iconType
@@ -76,8 +68,6 @@ const SITE_QUERY = gql`
   }
 `;
 
-export const getStaticProps: GetStaticProps<IndexPageProps> = async (
-  context
-) => {
-  return queryWithCommon(SITE_QUERY, context.preview);
+export const getStaticProps: GetStaticProps<IndexPageProps> = (context) => {
+  return queryWithCommon(PROPS_QUERY, context.preview);
 };
