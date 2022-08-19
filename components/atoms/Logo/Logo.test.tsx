@@ -3,7 +3,7 @@ import Logo from ".";
 
 describe("Logo", () => {
   it("renders", () => {
-    const func = () => render(<Logo />);
+    const func = () => render(<Logo size="md" />);
 
     expect(func).not.toThrow();
   });
