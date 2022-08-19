@@ -1,5 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 import type { GetStaticPropsResult } from "next";
+import type { Icon } from "../components/atoms/ThemedIcon/ThemedIcon.types";
 
 export interface RequestParams {
   query: string;
@@ -10,6 +11,7 @@ export interface RequestParams {
 export interface SiteMeta {
   headerTitle: string;
   headerSubtitle: string;
+  pageTitlePrefix?: string;
 }
 
 export interface PageMeta {
@@ -23,14 +25,19 @@ export interface CommonProps {
   isPreview: boolean;
   siteMetainfo: SiteMeta;
   pageMetainfo: PageMeta;
+  allExternalIconLinks: {
+    iconType: Icon;
+    altText: string;
+    link: string;
+  }[];
 }
 
-export function cmsRequest({
+export function cmsRequest<DataType>({
   query,
   variables,
   isPreview,
   excludeInvalid,
-}: RequestParams) {
+}: RequestParams): Promise<DataType> {
   const { DATOCMS_ENDPOINT, DATOCMS_PREVIEW_ENDPOINT, DATOCMS_API_TOKEN } =
     process.env;
 
@@ -52,19 +59,18 @@ export function cmsRequest({
   }
 
   const client = new GraphQLClient(cmsEndpoint, { headers });
-  return client.request(query, variables);
+  return client.request<DataType>(query, variables);
 }
 
-export async function queryWithCommon<PropType>(
+export async function queryWithCommon<PropType extends CommonProps>(
   query: string,
   isPreview: boolean | undefined
-): Promise<GetStaticPropsResult<PropType & CommonProps>> {
-  const data: Omit<PropType, "isPreview"> = await cmsRequest({
+): Promise<GetStaticPropsResult<PropType>> {
+  const data = await cmsRequest<PropType>({
     query,
     isPreview,
   });
 
-  const props = { ...data, isPreview: isPreview ?? false } as PropType &
-    CommonProps;
+  const props = { ...data, isPreview: isPreview ?? false };
   return { props };
 }
