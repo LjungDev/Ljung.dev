@@ -33,9 +33,7 @@ export default function IndexPage({
         )}
         <div className="grid grid-rows-[1fr_auto_1fr] w-screen h-full bg-snow-storm-2 dark:bg-polar-night-0">
           <div className=" flex items-end justify-center">
-            <div className="w-32">
-              <Logo />
-            </div>
+            <Logo size="lg" />
           </div>
           <TitleHeader
             title={siteMetainfo.headerTitle}
