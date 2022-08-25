@@ -10,6 +10,7 @@ import { queryWithCommon } from "../lib/cms";
 import Logo from "../components/atoms/Logo";
 
 import type { CommonProps } from "../lib/cms";
+import PreviewBar from "../components/atoms/PreviewBar";
 
 type IndexPageProps = CommonProps;
 
@@ -26,12 +27,8 @@ export default function IndexPage({
         <meta name="description" content={pageMetainfo.seo.description} />
       </Head>
       <div className="flex flex-col h-screen">
-        {isPreview && (
-          <div className="w-full bg-aurora-0 text-snow-storm-2 text-center text-sm p-1">
-            <span>Preview Mode</span>
-          </div>
-        )}
-        <div className="grid grid-rows-[1fr_auto_1fr] w-screen h-full bg-snow-storm-2 dark:bg-polar-night-0">
+        {isPreview && <PreviewBar />}
+        <div className="grid grid-rows-[1fr_auto_1fr] h-full bg-snow-storm-2 dark:bg-polar-night-0">
           <div className=" flex items-end justify-center">
             <Logo size="lg" />
           </div>
@@ -39,7 +36,16 @@ export default function IndexPage({
             title={siteMetainfo.headerTitle}
             subtitle={siteMetainfo.headerSubtitle}
           />
-          <ExternalIconDisplay icons={allExternalIconLinks} />
+          <div className="flex flex-col items-center pt-2">
+            <div className="flex gap-1 items-center font-body text-base z-10">
+              <Link href="tutorials">
+                <a className="hover:text-polar-night-3 active:text-snow-storm-0 cursor-pointer text-polar-night-0 dark:text-snow-storm-2">
+                  Tutorials
+                </a>
+              </Link>
+            </div>
+            <ExternalIconDisplay icons={allExternalIconLinks} />
+          </div>
         </div>
       </div>
     </>
