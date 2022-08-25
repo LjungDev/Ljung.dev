@@ -36,14 +36,6 @@ export default function NavBar({
         </div>
       </Link>
       <div className="flex gap-1 items-center font-body text-base">
-        <Link href="/games">
-          <a className={getClassName(selected === "Games")}>Games</a>
-        </Link>
-        <div className="w-[1px] h-4 bg-polar-night-0 dark:bg-snow-storm-2 opacity-20" />
-        <Link href="/videos">
-          <a className={getClassName(selected === "Videos")}>Videos</a>
-        </Link>
-        <div className="w-[1px] h-4 bg-polar-night-0 dark:bg-snow-storm-2 opacity-20" />
         <Link href="/tutorials">
           <a className={getClassName(selected === "Tutorials")}>Tutorials</a>
         </Link>
