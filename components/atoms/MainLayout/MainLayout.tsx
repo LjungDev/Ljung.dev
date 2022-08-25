@@ -3,7 +3,5 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children }: MainLayoutProps): JSX.Element {
-  return (
-    <div className="flex flex-col min-h-screen bg-aurora-0">{children}</div>
-  );
+  return <div className="flex flex-col min-h-screen">{children}</div>;
 }
