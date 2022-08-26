@@ -1,6 +1,6 @@
-import { nord as nordStyleSyntaxHighlighter } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import theme from "react-syntax-highlighter/dist/cjs/styles/prism/nord";
 import { Image, renderNodeRule, StructuredText } from "react-datocms";
-import SyntaxHighlighter from "react-syntax-highlighter";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import MuxVideo from "@mux/mux-video-react";
 import {
   isBlockquote,
@@ -186,7 +186,7 @@ export default function StructuredTextRenderer({
                 <span className="text-polar-night-3 mx-2">{node.language}</span>
                 <SyntaxHighlighter
                   language={node.language}
-                  style={nordStyleSyntaxHighlighter}
+                  style={theme}
                   showLineNumbers={true}
                   customStyle={{ margin: 0, borderRadius: 0 }}
                 >
