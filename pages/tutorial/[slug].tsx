@@ -51,6 +51,7 @@ export default function TutorialPage({
           <BodyContentLayout>
             <RelatedPostNavigation left={seriesPrevious} right={seriesNext} />
             <StructuredTextRenderer content={content} />
+            <RelatedPostNavigation left={seriesPrevious} right={seriesNext} />
           </BodyContentLayout>
         </BodyLayout>
       </MainLayout>

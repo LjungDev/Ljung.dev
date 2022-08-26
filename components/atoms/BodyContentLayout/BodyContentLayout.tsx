@@ -8,7 +8,7 @@ export default function BodyContentLayout({
   return (
     <div className="max-w-xl w-full flex flex-col gap-12 items-center mb-12">
       <div className="h-[1px] w-full opacity-10 bg-polar-night-0 dark:bg-snow-storm-2" />
-      <div className="flex flex-col gap-2 max-w-[min(100%,512px)] m-3 p-3 text-polar-night-0 dark:text-snow-storm-2 text-base font-body">
+      <div className="flex flex-col gap-5 max-w-[min(100%,512px)] m-3 p-3 text-polar-night-0 dark:text-snow-storm-2 text-base font-body">
         {children}
       </div>
       <div className="h-[1px] w-full opacity-10 bg-polar-night-0 dark:bg-snow-storm-2" />
