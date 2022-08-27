@@ -12,19 +12,22 @@ import Logo from "../components/atoms/Logo";
 import type { CommonProps } from "../lib/cms";
 import PreviewBar from "../components/atoms/PreviewBar";
 
-type IndexPageProps = CommonProps;
+type IndexPageProps = Omit<CommonProps, "pageMetainfo">;
 
 export default function IndexPage({
   isPreview,
   allExternalIconLinks,
   siteMetainfo,
-  pageMetainfo,
+  _site,
 }: IndexPageProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>{pageMetainfo.seo.title}</title>
-        <meta name="description" content={pageMetainfo.seo.description} />
+        <title>{_site.globalSeo.fallbackSeo.title}</title>
+        <meta
+          name="description"
+          content={_site.globalSeo.fallbackSeo.description}
+        />
       </Head>
       <div className="flex flex-col h-screen">
         {isPreview && <PreviewBar />}
@@ -63,10 +66,13 @@ const PROPS_QUERY = gql`
       headerTitle
       headerSubtitle
     }
-    pageMetainfo(filter: { pageId: { eq: "home" } }) {
-      seo {
-        description
-        title
+    _site {
+      globalSeo {
+        siteName
+        fallbackSeo {
+          title
+          description
+        }
       }
     }
   }

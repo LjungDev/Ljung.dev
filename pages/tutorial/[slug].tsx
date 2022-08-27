@@ -19,7 +19,7 @@ interface RelatedSeriesEntry {
   seriesTitle: string;
 }
 
-interface TutorialPageProps extends CommonProps {
+interface TutorialPageProps extends Omit<CommonProps, "pageMetainfo"> {
   post: {
     title: string;
     description: string;
@@ -32,12 +32,13 @@ interface TutorialPageProps extends CommonProps {
 export default function TutorialPage({
   isPreview,
   siteMetainfo,
+  _site,
   post: { title, description, seriesPrevious, seriesNext, content },
 }: TutorialPageProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>{`${siteMetainfo.pageTitlePrefix}${title}`}</title>
+        <title>{`${_site.globalSeo.siteName} | ${title}`}</title>
         <meta name="description" content={description} />
       </Head>
       <MainLayout>
@@ -66,6 +67,15 @@ function makePropsQuery(slug: string): string {
         headerTitle
         headerSubtitle
         pageTitlePrefix
+      }
+      _site {
+        globalSeo {
+          siteName
+          fallbackSeo {
+            title
+            description
+          }
+        }
       }
       post(filter: { slug: { eq: "${slug}" } }) {
         title

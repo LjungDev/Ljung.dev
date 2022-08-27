@@ -8,10 +8,20 @@ export interface RequestParams {
   isPreview?: boolean;
   excludeInvalid?: boolean;
 }
-export interface SiteMeta {
+export interface SiteExtraMeta {
   headerTitle: string;
   headerSubtitle: string;
   pageTitlePrefix?: string;
+}
+
+export interface SiteMeta {
+  globalSeo: {
+    siteName: string;
+    fallbackSeo: {
+      title: string;
+      description: string;
+    };
+  };
 }
 
 export interface PageMeta {
@@ -23,8 +33,9 @@ export interface PageMeta {
 
 export interface CommonProps {
   isPreview: boolean;
-  siteMetainfo: SiteMeta;
+  siteMetainfo: SiteExtraMeta;
   pageMetainfo: PageMeta;
+  _site: SiteMeta;
   allExternalIconLinks: {
     iconType: Icon;
     altText: string;
