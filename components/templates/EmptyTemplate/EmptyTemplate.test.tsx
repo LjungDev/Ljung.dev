@@ -18,6 +18,15 @@ describe("EmptyTemplate", () => {
           }}
           allExternalIconLinks={[]}
           isPreview={false}
+          _site={{
+            globalSeo: {
+              siteName: "",
+              fallbackSeo: {
+                title: "",
+                description: "",
+              },
+            },
+          }}
         />
       );
 

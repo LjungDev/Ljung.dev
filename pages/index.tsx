@@ -12,7 +12,7 @@ import Logo from "../components/atoms/Logo";
 import type { CommonProps } from "../lib/cms";
 import PreviewBar from "../components/atoms/PreviewBar";
 
-type IndexPageProps = Omit<CommonProps, "pageMetainfo">;
+type IndexPageProps = CommonProps;
 
 export default function IndexPage({
   isPreview,

@@ -19,7 +19,7 @@ interface RelatedSeriesEntry {
   seriesTitle: string;
 }
 
-interface TutorialPageProps extends Omit<CommonProps, "pageMetainfo"> {
+interface TutorialPageProps extends CommonProps {
   post: {
     title: string;
     description: string;

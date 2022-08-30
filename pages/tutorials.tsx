@@ -5,7 +5,7 @@ import type { GetStaticProps } from "next";
 
 import { queryWithCommon } from "../lib/cms";
 
-import type { CommonProps } from "../lib/cms";
+import type { CommonPropsWithMeta } from "../lib/cms";
 import PreviewBar from "../components/atoms/PreviewBar";
 import NavBar from "../components/organisms/NavBar";
 import PostSeriesDisplay from "../components/organisms/PostSeriesDisplay";
@@ -22,7 +22,7 @@ interface Post {
   slug: string;
 }
 
-interface TutorialPageProps extends CommonProps {
+interface TutorialPageProps extends CommonPropsWithMeta {
   allPosts: Post[];
 }
 

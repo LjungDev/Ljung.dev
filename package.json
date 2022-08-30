@@ -9,7 +9,7 @@
     "static": "next build && next export",
     "start": "next start",
     "wslstart": "next start -H $(hostname -I)",
-    "lint": "next lint",
+    "lint": "next lint && tsc --noEmit",
     "ladle": "ladle serve",
     "test": "jest"
   },

@@ -1,12 +1,12 @@
 import Head from "next/head";
-import type { CommonProps } from "../../../lib/cms";
+import type { CommonPropsWithMeta } from "../../../lib/cms";
 import BodyContentLayout from "../../atoms/BodyContentLayout";
 import BodyLayout from "../../atoms/BodyLayout";
 import MainLayout from "../../atoms/MainLayout";
 import PreviewBar from "../../atoms/PreviewBar";
 import NavBar from "../../organisms/NavBar";
 
-type EmptyTemplateProps = CommonProps;
+type EmptyTemplateProps = CommonPropsWithMeta;
 
 export default function EmptyTemplate({
   isPreview,
