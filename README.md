@@ -16,6 +16,7 @@ It uses the following stack:
 - [Nord](https://www.nordtheme.com/) as theme (with [Baloo 2](https://fonts.google.com/specimen/Baloo+2) / [Open Sans](https://fonts.google.com/specimen/Open+Sans) / [Fira Code](https://fonts.google.com/specimen/Fira+Code) for fonts)
 - [Ladle](https://ladle.dev/) for component stories
 - [Jest](https://jestjs.io/) / [React Testing Library](https://testing-library.com/) for unit tests
+- [Google Tag Manager](https://tagmanager.google.com) for analytics support
 - [Commitizen](https://commitizen-tools.github.io/commitizen/) for commit messages (with [cz-conventional-emoji](https://github.com/gaoac/cz-conventional-emoji) as format)
 - [Yarn](https://yarnpkg.com/) as package manager
 - [Atomic Design](https://xd.adobe.com/ideas/process/ui-design/atomic-design-principles-methodology-101/) for component structure
@@ -43,10 +44,11 @@ Prefix each command with `yarn`, e.g. `yarn dev`.
 
 The following environment variables are needed. For local development add them to your `./.env.local`.
 
-| Variable                 | Value                                                                   |
-| ------------------------ | ----------------------------------------------------------------------- |
-| DATOCMS_ENDPOINT         | Endpoint URL to DatoCMS for content (live).                             |
-| DATOCMS_PREVIEW_ENDPOINT | Endpoint URL to DatoCMS for content (drafts).                           |
-| DATOCMS_API_TOKEN        | API token (read-only) for DatoCMS.                                      |
-| PREVIEW_TOKEN            | Random string used as query parameter to toggle preview mode.           |
-| UNOPTIMIZED_IMAGES       | (optional) Set to disable images optimization (used for `next export`). |
+| Variable                          | Value                                                                   |
+| --------------------------------- | ----------------------------------------------------------------------- |
+| DATOCMS_ENDPOINT                  | Endpoint URL to DatoCMS for content (live).                             |
+| DATOCMS_PREVIEW_ENDPOINT          | Endpoint URL to DatoCMS for content (drafts).                           |
+| DATOCMS_API_TOKEN                 | API token (read-only) for DatoCMS.                                      |
+| PREVIEW_TOKEN                     | Random string used as query parameter to toggle preview mode.           |
+| UNOPTIMIZED_IMAGES                | (optional) Set to disable images optimization (used for `next export`). |
+| NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID | (optional) Google Tag Manager ID to use for analytics.                  |
