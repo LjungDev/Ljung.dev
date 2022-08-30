@@ -34,13 +34,16 @@ export interface PageMeta {
 export interface CommonProps {
   isPreview: boolean;
   siteMetainfo: SiteExtraMeta;
-  pageMetainfo: PageMeta;
   _site: SiteMeta;
   allExternalIconLinks: {
     iconType: Icon;
     altText: string;
     link: string;
   }[];
+}
+
+export interface CommonPropsWithMeta extends CommonProps {
+  pageMetainfo: PageMeta;
 }
 
 export function cmsRequest<DataType>({
