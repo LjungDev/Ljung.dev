@@ -1,4 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { FallbackGoogleTagManager } from "../components/atoms/GoogleTagManager";
+import { GTM_ID } from "../lib/gtm";
 
 export default function Document(): JSX.Element {
   return (
@@ -35,6 +37,7 @@ export default function Document(): JSX.Element {
         />
       </Head>
       <body>
+        <FallbackGoogleTagManager gtmId={GTM_ID} />
         <Main />
         <NextScript />
       </body>
