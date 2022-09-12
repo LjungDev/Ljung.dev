@@ -11,7 +11,7 @@ import {
   isListItem,
   isParagraph,
 } from "datocms-structured-text-utils";
-import Link from "next/link";
+import Link from "../Link";
 
 import type {
   ResponsiveImageType,
@@ -146,13 +146,8 @@ export default function StructuredTextRenderer({
             const target =
               node.meta?.find((meta) => meta.id === "target")?.value ?? "_self";
             return (
-              <Link key={key} href={node.url}>
-                <a
-                  target={target}
-                  className="text-frost-3 dark:text-frost-1 hover:opacity-50 active:opacity-75"
-                >
-                  {children}
-                </a>
+              <Link key={key} href={node.url} target={target}>
+                {children}
               </Link>
             );
           }),
