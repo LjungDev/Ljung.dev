@@ -1,5 +1,5 @@
 import theme from "react-syntax-highlighter/dist/cjs/styles/prism/nord";
-import { Image, renderNodeRule, StructuredText } from "react-datocms";
+import { renderNodeRule, StructuredText } from "react-datocms";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import MuxVideo from "@mux/mux-video-react";
 import {
@@ -18,6 +18,7 @@ import type {
   StructuredTextGraphQlResponse,
   StructuredTextGraphQlResponseRecord,
 } from "react-datocms";
+import ImageViewer from "../../molecules/ImageViewer";
 
 export interface ImageBlockRecord extends StructuredTextGraphQlResponseRecord {
   __typename: "ImageRecord";
@@ -54,14 +55,7 @@ export default function StructuredTextRenderer({
         data={content}
         renderBlock={({ record }) => {
           if (record.__typename === "ImageRecord") {
-            return (
-              <div className="flex justify-center">
-                <Image
-                  data={record.image.responsiveImage}
-                  layout={"intrinsic"}
-                />
-              </div>
-            );
+            return <ImageViewer image={record.image.responsiveImage} />;
           }
           return (
             <MuxVideo
